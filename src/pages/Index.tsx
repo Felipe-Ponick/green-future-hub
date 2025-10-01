@@ -39,7 +39,6 @@ const Index = () => {
             <div className="hidden md:flex space-x-8">
               <Link to="/" className="text-eco-primary font-semibold">Início</Link>
               <Link to="/impactos" className="text-gray-600 hover:text-eco-primary transition-colors">Impactos</Link>
-              <Link to="/solucoes" className="text-gray-600 hover:text-eco-primary transition-colors">Soluções</Link>
               <Link to="/dados" className="text-gray-600 hover:text-eco-primary transition-colors">Dados</Link>
               <Link to="/about" className="text-gray-600 hover:text-eco-primary transition-colors">O que é TI Verde</Link>
               <Link to="/calculator" className="text-gray-600 hover:text-eco-primary transition-colors">Calculadora</Link>
@@ -67,16 +66,16 @@ const Index = () => {
                 Baseado em Pesquisa Científica
               </Badge>
               <h1 className="text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-8">
-                Tecnologia que
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-eco-primary to-green-600 block"> Regenera o Planeta</span>
+                O Impacto Ambiental da
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-eco-primary to-green-600 block"> Tecnologia</span>
                 <span className="text-4xl lg:text-5xl text-gray-700 block mt-4">
-                  Dados Reais, Impacto Medido
+                  Dados Científicos, Conscientização Real
                 </span>
               </h1>
               <p className="text-2xl text-gray-600 leading-relaxed mb-8 max-w-3xl mx-auto">
-                Empresas como <span className="font-semibold text-eco-primary">Google, Microsoft e Apple</span> já implementaram 
-                soluções que reduziram <span className="font-semibold text-eco-primary">40-84% das emissões</span> com 
-                <span className="font-semibold text-eco-primary"> economia comprovada de bilhões</span>.
+                A tecnologia representa <span className="font-semibold text-eco-primary">3.9% das emissões globais de CO₂</span>, 
+                superando a indústria da aviação. Mas há esperança: estudos científicos mostram que é possível 
+                <span className="font-semibold text-eco-primary"> reduzir 40-84% desse impacto</span> com práticas sustentáveis.
               </p>
               <p className="text-lg text-gray-500 mb-12">
                 Fontes: Nature Energy (2019), MIT Technology Review (2023), Science Journal (2022)
@@ -114,14 +113,14 @@ const Index = () => {
               <Link to="/impactos">
                 <Button size="lg" className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white px-12 py-4 text-lg font-semibold">
                   <Zap className="mr-3 h-6 w-6" />
-                  Ver Dados Científicos
+                  Entenda o Problema
                   <ArrowRight className="ml-3 h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/calculator">
                 <Button variant="outline" size="lg" className="border-2 border-eco-primary text-eco-primary hover:bg-eco-primary hover:text-white px-12 py-4 text-lg font-semibold">
                   <PlayCircle className="mr-3 h-6 w-6" />
-                  Calculadora Científica
+                  Calcule Seu Impacto
                 </Button>
               </Link>
             </div>
@@ -134,10 +133,10 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Casos Reais de Sucesso
+              O Que Grandes Empresas Estão Fazendo
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Dados verificados de implementações reais em empresas Fortune 500 e estudos peer-reviewed
+              Exemplos reais de como a tecnologia sustentável está sendo implementada ao redor do mundo
             </p>
           </div>
 
@@ -204,36 +203,36 @@ const Index = () => {
           <div className="text-center">
             <div className="bg-gradient-to-r from-eco-primary to-green-600 text-white p-12 rounded-3xl shadow-2xl max-w-4xl mx-auto">
               <h3 className="text-4xl font-bold mb-6">
-                O Futuro é Agora - Dados Comprovados
+                A Mudança Começa com a Consciência
               </h3>
               <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-                Mais de 1.000 empresas na iniciativa RE100 já alcançaram 100% energia renovável. 
-                Estudos do MIT mostram ROI médio de 300% em 18 meses.
+                Mais de 1.000 empresas na iniciativa RE100 estão transformando a indústria de tecnologia. 
+                A jornada para a sustentabilidade começa entendendo o impacto atual.
               </p>
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <div>
                   <div className="text-3xl font-bold">1000+</div>
-                  <div className="text-sm opacity-90">empresas RE100 (2023)</div>
+                  <div className="text-sm opacity-90">empresas comprometidas (2023)</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold">300%</div>
-                  <div className="text-sm opacity-90">ROI médio (MIT Study, 2022)</div>
+                  <div className="text-3xl font-bold">40-84%</div>
+                  <div className="text-sm opacity-90">redução possível de emissões</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold">18 meses</div>
-                  <div className="text-sm opacity-90">payback médio (McKinsey, 2023)</div>
+                  <div className="text-3xl font-bold">3.9%</div>
+                  <div className="text-sm opacity-90">das emissões globais</div>
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Link to="/solucoes">
+                <Link to="/calculator">
                   <Button size="lg" variant="secondary" className="bg-white text-eco-primary hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
-                    Ver Implementações Reais
+                    Calcule Seu Impacto
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
                 <Link to="/dados">
-                  <Button size="lg" variant="outline" className="bg-white text-eco-primary hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
-                    Acessar Base Científica
+                  <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold">
+                    Explore os Dados Científicos
                   </Button>
                 </Link>
               </div>

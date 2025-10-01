@@ -8,7 +8,6 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Calculator from "./pages/Calculator";
 import Impactos from "./pages/Impactos";
-import Solucoes from "./pages/Solucoes";
 import Dados from "./pages/Dados";
 import NotFound from "./pages/NotFound";
 
@@ -23,7 +22,6 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/impactos" element={<Impactos />} />
-          <Route path="/solucoes" element={<Solucoes />} />
           <Route path="/dados" element={<Dados />} />
           <Route path="/about" element={<About />} />
           <Route path="/calculator" element={<Calculator />} />

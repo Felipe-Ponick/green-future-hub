@@ -144,7 +144,6 @@ const Calculator = () => {
             <div className="hidden md:flex space-x-8">
               <Link to="/" className="text-gray-600 hover:text-eco-primary transition-colors">Início</Link>
               <Link to="/impactos" className="text-gray-600 hover:text-eco-primary transition-colors">Impactos</Link>
-              <Link to="/solucoes" className="text-gray-600 hover:text-eco-primary transition-colors">Soluções</Link>
               <Link to="/dados" className="text-gray-600 hover:text-eco-primary transition-colors">Dados</Link>
               <Link to="/about" className="text-gray-600 hover:text-eco-primary transition-colors">O que é TI Verde</Link>
               <Link to="/calculator" className="text-eco-primary font-semibold">Calculadora</Link>
@@ -378,9 +377,9 @@ const Calculator = () => {
                     </div>
 
                     <div className="pt-4 border-t">
-                      <Link to="/solucoes">
+                      <Link to="/dados">
                         <Button className="w-full bg-eco-primary hover:bg-eco-secondary text-white">
-                          Ver Como Implementar
+                          Explorar Dados Científicos
                         </Button>
                       </Link>
                     </div>
@@ -438,30 +437,6 @@ const Calculator = () => {
             </div>
           </div>
 
-          {/* Call to Action */}
-          <div className="text-center">
-            <Card className="bg-gradient-to-r from-eco-primary to-green-600 text-white p-8">
-              <CardContent>
-                <h3 className="text-2xl font-bold mb-4">
-                  Metodologia Validada por 200+ Estudos Científicos
-                </h3>
-                <p className="text-lg mb-6 opacity-90">
-                  Nossa calculadora é baseada em metodologias reconhecidas internacionalmente 
-                  e validadas por pesquisas acadêmicas peer-reviewed.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg" variant="secondary" className="bg-white text-eco-primary hover:bg-gray-100">
-                    Baixar Metodologia Completa
-                  </Button>
-                  <Link to="/dados">
-                    <Button size="lg" variant="outline" className="bg-white text-eco-primary hover:bg-gray-100">
-                      Ver Pesquisas Científicas
-                    </Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </section>
 
