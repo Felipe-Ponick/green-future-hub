@@ -19,6 +19,7 @@ const Calculator = () => {
   });
 
   const [results, setResults] = useState(null);
+  const [selectedMethod, setSelectedMethod] = useState('virtualization');
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({
@@ -27,7 +28,24 @@ const Calculator = () => {
     }));
   };
 
-  const calculateImpact = () => {
+  const getReductionFactor = (method) => {
+    switch(method) {
+      case 'virtualization':
+        return 0.6; // 60% redução
+      case 'cloud':
+        return 0.65; // 65% redução
+      case 'renewable':
+        return 0.75; // 75% redução
+      case 'virtualization-cloud':
+        return 1 - ((1 - 0.6) * (1 - 0.65)); // ~84% combinado
+      case 'complete':
+        return 1 - ((1 - 0.6) * (1 - 0.65 * 0.5) * (1 - 0.75 * 0.3)); // ~87% completo
+      default:
+        return 0.6;
+    }
+  };
+
+  const calculateImpact = (method = selectedMethod) => {
     const employees = parseInt(formData.employees) || 0;
     const computers = parseInt(formData.computers) || 0;
     const servers = parseInt(formData.servers) || 0;
@@ -43,19 +61,13 @@ const Calculator = () => {
     const annualCO2Emissions = annualEnergyConsumption * 0.0817; // kg CO₂/ano
     const annualEnergyCost = annualEnergyConsumption * energyCost;
     
-    // Potencial de economia com T.I. Verde baseado em estudos científicos
-    // Fonte: Chen et al. (2020) - Sustainable computing practices
-    const virtualReduction = 0.6; // 60% redução com virtualização (Berl et al., 2010)
-    const cloudReduction = 0.65; // 65% redução com cloud verde (Accenture, 2020)
-    const renewableReduction = 0.75; // 75% redução com energia renovável (Google, 2023)
-    
-    const combinedReduction = 1 - ((1 - virtualReduction) * (1 - cloudReduction * 0.5) * (1 - renewableReduction * 0.3));
+    const reductionFactor = getReductionFactor(method);
 
     const potentialSavings = {
-      energyReduction: annualEnergyConsumption * combinedReduction,
-      co2Reduction: annualCO2Emissions * combinedReduction,
-      costSavings: annualEnergyCost * combinedReduction,
-      treesEquivalent: (annualCO2Emissions * combinedReduction) / 22 // 1 árvore absorve ~22kg CO₂/ano (FAO, 2020)
+      energyReduction: annualEnergyConsumption * reductionFactor,
+      co2Reduction: annualCO2Emissions * reductionFactor,
+      costSavings: annualEnergyCost * reductionFactor,
+      treesEquivalent: (annualCO2Emissions * reductionFactor) / 22 // 1 árvore absorve ~22kg CO₂/ano (FAO, 2020)
     };
 
     setResults({
@@ -71,6 +83,13 @@ const Calculator = () => {
         treesEquivalent: Math.round(potentialSavings.treesEquivalent)
       }
     });
+  };
+
+  const handleMethodChange = (method) => {
+    setSelectedMethod(method);
+    if (results) {
+      calculateImpact(method);
+    }
   };
 
   const methodology = [
@@ -214,7 +233,7 @@ const Calculator = () => {
                 </div>
                 
                 <Button 
-                  onClick={calculateImpact} 
+                  onClick={() => calculateImpact()} 
                   className="w-full bg-eco-primary hover:bg-eco-secondary text-white"
                   size="lg"
                 >
@@ -227,10 +246,10 @@ const Calculator = () => {
             {results && (
               <Card className="p-6">
                 <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <BarChart3 className="h-6 w-6 text-eco-primary" />
-                    <span>Resultados Baseados em Pesquisa</span>
-                  </CardTitle>
+                <CardTitle className="flex items-center space-x-2">
+                  <BarChart3 className="h-6 w-6 text-eco-primary" />
+                  <span>Resultados do Seu Cálculo</span>
+                </CardTitle>
                   <CardDescription>
                     Cálculos fundamentados em metodologias científicas validadas
                   </CardDescription>
@@ -268,6 +287,66 @@ const Calculator = () => {
                     {/* Potential Savings */}
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-3">Potencial Científico de Economia</h4>
+                      
+                      {/* Método Selection */}
+                      <div className="mb-4 p-3 bg-gray-50 rounded-lg">
+                        <Label className="text-sm font-semibold text-gray-700 mb-2 block">
+                          Selecione o Método de Implementação:
+                        </Label>
+                        <div className="space-y-2">
+                          <button
+                            onClick={(e) => { e.preventDefault(); handleMethodChange('virtualization'); }}
+                            className={`w-full text-left p-2 rounded-md text-sm transition-all ${
+                              selectedMethod === 'virtualization' 
+                                ? 'bg-eco-primary text-white' 
+                                : 'bg-white text-gray-700 hover:bg-gray-100'
+                            }`}
+                          >
+                            Virtualização (60% redução)
+                          </button>
+                          <button
+                            onClick={(e) => { e.preventDefault(); handleMethodChange('cloud'); }}
+                            className={`w-full text-left p-2 rounded-md text-sm transition-all ${
+                              selectedMethod === 'cloud' 
+                                ? 'bg-eco-primary text-white' 
+                                : 'bg-white text-gray-700 hover:bg-gray-100'
+                            }`}
+                          >
+                            Cloud Verde (65% redução)
+                          </button>
+                          <button
+                            onClick={(e) => { e.preventDefault(); handleMethodChange('renewable'); }}
+                            className={`w-full text-left p-2 rounded-md text-sm transition-all ${
+                              selectedMethod === 'renewable' 
+                                ? 'bg-eco-primary text-white' 
+                                : 'bg-white text-gray-700 hover:bg-gray-100'
+                            }`}
+                          >
+                            Energia Renovável (75% redução)
+                          </button>
+                          <button
+                            onClick={(e) => { e.preventDefault(); handleMethodChange('virtualization-cloud'); }}
+                            className={`w-full text-left p-2 rounded-md text-sm transition-all ${
+                              selectedMethod === 'virtualization-cloud' 
+                                ? 'bg-eco-primary text-white' 
+                                : 'bg-white text-gray-700 hover:bg-gray-100'
+                            }`}
+                          >
+                            Virtualização + Cloud (84% redução)
+                          </button>
+                          <button
+                            onClick={(e) => { e.preventDefault(); handleMethodChange('complete'); }}
+                            className={`w-full text-left p-2 rounded-md text-sm transition-all ${
+                              selectedMethod === 'complete' 
+                                ? 'bg-eco-primary text-white' 
+                                : 'bg-white text-gray-700 hover:bg-gray-100'
+                            }`}
+                          >
+                            Solução Completa (87% redução)
+                          </button>
+                        </div>
+                      </div>
+
                       <div className="grid grid-cols-1 gap-3">
                         <div className="flex justify-between p-3 bg-green-50 rounded-lg">
                           <div className="flex items-center space-x-2">
