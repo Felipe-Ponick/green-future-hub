@@ -53,7 +53,6 @@ const About = () => {
             <div className="hidden md:flex space-x-8">
               <Link to="/" className="text-gray-600 hover:text-eco-primary transition-colors">Início</Link>
               <Link to="/impactos" className="text-gray-600 hover:text-eco-primary transition-colors">Impactos</Link>
-              <Link to="/solucoes" className="text-gray-600 hover:text-eco-primary transition-colors">Soluções</Link>
               <Link to="/dados" className="text-gray-600 hover:text-eco-primary transition-colors">Dados</Link>
               <Link to="/about" className="text-eco-primary font-semibold">O que é TI Verde</Link>
               <Link to="/calculator" className="text-gray-600 hover:text-eco-primary transition-colors">Calculadora</Link>
@@ -160,14 +159,9 @@ const About = () => {
                 Descubra como sua empresa pode se beneficiar das práticas sustentáveis 
                 em tecnologia e começar a economizar hoje mesmo.
               </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Link to="/solucoes">
-                  <Button size="lg" variant="secondary" className="bg-white text-eco-primary hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
-                    Ver Soluções Práticas
-                  </Button>
-                </Link>
+              <div className="flex justify-center">
                 <Link to="/calculator">
-                  <Button size="lg" variant="outline" className="bg-white text-eco-primary hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
+                  <Button size="lg" variant="secondary" className="bg-white text-eco-primary hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
                     Calcular Meu Impacto
                   </Button>
                 </Link>

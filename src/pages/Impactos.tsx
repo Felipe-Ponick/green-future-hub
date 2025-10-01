@@ -87,7 +87,6 @@ const Impactos = () => {
             <div className="hidden md:flex space-x-8">
               <Link to="/" className="text-gray-600 hover:text-eco-primary transition-colors">Início</Link>
               <Link to="/impactos" className="text-eco-primary font-semibold">Impactos</Link>
-              <Link to="/solucoes" className="text-gray-600 hover:text-eco-primary transition-colors">Soluções</Link>
               <Link to="/dados" className="text-gray-600 hover:text-eco-primary transition-colors">Dados</Link>
               <Link to="/about" className="text-gray-600 hover:text-eco-primary transition-colors">O que é TI Verde</Link>
               <Link to="/calculator" className="text-gray-600 hover:text-eco-primary transition-colors">Calculadora</Link>
@@ -110,10 +109,6 @@ const Impactos = () => {
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
               O Impacto Real da Tecnologia
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Baseado em pesquisas publicadas em Nature, Science e journals especializados. 
-              Dados coletados de estudos peer-reviewed e relatórios de organizações internacionais.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
@@ -151,7 +146,7 @@ const Impactos = () => {
           {/* Detailed Impact Analysis */}
           <div className="mb-16">
             <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
-              Análise Científica Detalhada
+              Outros Dados Importantes
             </h3>
             <div className="grid md:grid-cols-3 gap-8">
               {detailedImpacts.map((impact, index) => (
@@ -191,40 +186,6 @@ const Impactos = () => {
             </div>
           </div>
 
-          {/* Call to Action with Real Data */}
-          <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-red-500 to-orange-500 text-white p-8 rounded-2xl shadow-xl">
-              <h3 className="text-2xl font-bold mb-4">
-                Dados em Tempo Real (Baseados em Masanet et al., 2020)
-              </h3>
-              <div className="grid md:grid-cols-3 gap-6 text-center mb-8">
-                <div>
-                  <div className="text-3xl font-bold">420 kg</div>
-                  <div className="text-sm opacity-90">CO₂ por minuto - data centers globais</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold">8,3 milhões</div>
-                  <div className="text-sm opacity-90">emails por minuto (Radicati, 2021)</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold">$47,000</div>
-                  <div className="text-sm opacity-90">desperdiçados por minuto em energia (IEA)</div>
-                </div>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/solucoes">
-                  <Button size="lg" variant="secondary" className="bg-white text-red-600 hover:bg-gray-100">
-                    Ver Soluções Científicas
-                  </Button>
-                </Link>
-                <Link to="/calculator">
-                  <Button size="lg" variant="outline" className="bg-white text-red-600 hover:bg-gray-100">
-                    Calcular Impacto Real
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 

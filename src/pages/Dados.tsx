@@ -179,7 +179,6 @@ const Dados = () => {
             <div className="hidden md:flex space-x-8">
               <Link to="/" className="text-gray-600 hover:text-eco-primary transition-colors">Início</Link>
               <Link to="/impactos" className="text-gray-600 hover:text-eco-primary transition-colors">Impactos</Link>
-              <Link to="/solucoes" className="text-gray-600 hover:text-eco-primary transition-colors">Soluções</Link>
               <Link to="/dados" className="text-eco-primary font-semibold">Dados</Link>
               <Link to="/about" className="text-gray-600 hover:text-eco-primary transition-colors">O que é TI Verde</Link>
               <Link to="/calculator" className="text-gray-600 hover:text-eco-primary transition-colors">Calculadora</Link>
@@ -197,16 +196,9 @@ const Dados = () => {
         <div className="container mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
-              Dados Científicos Verificados
-            </Badge>
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
               Dados Baseados em Pesquisa Acadêmica
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Todas as informações apresentadas são fundamentadas em estudos científicos 
-              publicados em periódicos acadêmicos reconhecidos internacionalmente
-            </p>
           </div>
 
           {/* Stats Grid com fontes */}
@@ -376,44 +368,6 @@ const Dados = () => {
             </div>
           </div>
 
-          {/* Reports com referências acadêmicas */}
-          <div className="mb-16">
-            <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
-              Relatórios Baseados em Evidências Científicas
-            </h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              {reports.map((report, index) => (
-                <Card 
-                  key={index} 
-                  className="hover:shadow-lg transition-all duration-300 animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-3 mb-4">
-                      <div className="p-2 bg-eco-primary/10 rounded-lg">
-                        <BarChart3 className="h-6 w-6 text-eco-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-bold text-gray-800 mb-2">{report.title}</h4>
-                        <p className="text-sm text-gray-600 mb-3">{report.description}</p>
-                        <div className="grid grid-cols-2 gap-2 text-xs text-gray-500 mb-2">
-                          <span>{report.pages}</span>
-                          <span>{report.format} • {report.size}</span>
-                        </div>
-                        <div className="text-xs text-eco-primary font-semibold">
-                          📚 {report.academicSources} científicas
-                        </div>
-                      </div>
-                    </div>
-                    <Button variant="outline" size="sm" className="w-full">
-                      <Download className="h-4 w-4 mr-2" /> Baixar Relatório
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
           {/* Call to Action */}
           <div className="text-center bg-gradient-to-r from-eco-primary to-green-600 text-white p-12 rounded-2xl shadow-xl">
             <h3 className="text-3xl font-bold mb-4">
@@ -423,15 +377,12 @@ const Dados = () => {
               Mais de 200 estudos acadêmicos confirmam que empresas podem reduzir 
               até 80% de suas emissões e economizar milhões implementando T.I. Verde
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <div className="flex justify-center max-w-md mx-auto">
               <Link to="/calculator">
                 <Button size="lg" variant="secondary" className="bg-white text-eco-primary hover:bg-gray-100">
                   Ver Cálculos Científicos
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="bg-white text-eco-primary hover:bg-gray-100">
-                Baixar Metodologia Completa
-              </Button>
             </div>
           </div>
         </div>

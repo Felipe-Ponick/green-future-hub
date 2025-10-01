@@ -206,8 +206,7 @@ const Index = () => {
                 A Mudança Começa com a Consciência
               </h3>
               <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-                Mais de 1.000 empresas na iniciativa RE100 estão transformando a indústria de tecnologia. 
-                A jornada para a sustentabilidade começa entendendo o impacto atual.
+                Entenda como a tecnologia influencia o meio ambiente e descubra formas de reduzir sua pegada digital.
               </p>
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <div>
@@ -231,8 +230,8 @@ const Index = () => {
                   </Button>
                 </Link>
                 <Link to="/dados">
-                  <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold">
-                    Explore os Dados Científicos
+                  <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/20 px-8 py-4 text-lg font-semibold">
+                    Veja mais alguns dados
                   </Button>
                 </Link>
               </div>
