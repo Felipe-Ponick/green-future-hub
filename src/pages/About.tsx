@@ -44,13 +44,13 @@ const About = () => {
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
       {/* Header/Navigation */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-green-200">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Leaf/>
-              <span className="text-2xl font-bold text-gray-800">EcoTech</span>
+              <Leaf className="h-5 w-5 sm:h-6 sm:w-6" />
+              <span className="text-xl sm:text-2xl font-bold text-gray-800">EcoTech</span>
             </div>
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden lg:flex space-x-6 xl:space-x-8">
               <Link to="/" className="text-gray-600 hover:text-eco-primary transition-colors">Início</Link>
               <Link to="/impactos" className="text-gray-600 hover:text-eco-primary transition-colors">Impactos</Link>
               <Link to="/dados" className="text-gray-600 hover:text-eco-primary transition-colors">Dados</Link>
@@ -58,25 +58,25 @@ const About = () => {
               <Link to="/calculator" className="text-gray-600 hover:text-eco-primary transition-colors">Calculadora</Link>
             </div>
             <Link to="/calculator">
-              <Button className="bg-eco-primary hover:bg-eco-secondary text-white">
-                Calcular Impacto
+              <Button className="bg-eco-primary hover:bg-eco-secondary text-white text-sm sm:text-base px-3 sm:px-4">
+                Calcular
               </Button>
             </Link>
           </div>
         </div>
       </nav>
 
-      <section className="py-20 px-6">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="container mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <Badge className="mb-4 bg-eco-primary/10 text-eco-primary border-eco-primary/20">
+          <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+            <Badge className="mb-4 bg-eco-primary/10 text-eco-primary border-eco-primary/20 text-sm sm:text-base">
               Conceitos Fundamentais
             </Badge>
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
               O que é 
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-eco-primary to-green-600"> T.I. Verde?</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               T.I. Verde é a prática de projetar, fabricar, usar e descartar computadores, 
               servidores e sistemas associados de forma eficiente e ecologicamente responsável.
             </p>
@@ -101,11 +101,11 @@ const About = () => {
           </div>
 
           {/* Principles Grid */}
-          <div className="mb-16">
-            <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <div className="mb-12 sm:mb-16">
+            <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-12 px-4">
               Princípios Fundamentais da T.I. Verde
             </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {principles.map((principle, index) => (
                 <Card 
                   key={index} 
@@ -131,11 +131,11 @@ const About = () => {
           </div>
 
           {/* Benefits Section */}
-          <div className="mb-16">
-            <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <div className="mb-12 sm:mb-16">
+            <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-12 px-4">
               Benefícios da Implementação
             </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {benefits.map((benefit, index) => (
                 <div 
                   key={index} 
@@ -150,18 +150,18 @@ const About = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center">
-            <div className="bg-gradient-to-r from-eco-primary to-green-600 text-white p-12 rounded-2xl shadow-xl">
-              <h3 className="text-3xl font-bold mb-6">
+          <div className="text-center px-4">
+            <div className="bg-gradient-to-r from-eco-primary to-green-600 text-white p-6 sm:p-8 lg:p-12 rounded-xl sm:rounded-2xl shadow-xl">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">
                 Pronto para Implementar T.I. Verde?
               </h3>
-              <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 opacity-90 max-w-2xl mx-auto">
                 Descubra como sua empresa pode se beneficiar das práticas sustentáveis 
                 em tecnologia e começar a economizar hoje mesmo.
               </p>
               <div className="flex justify-center">
-                <Link to="/calculator">
-                  <Button size="lg" variant="secondary" className="bg-white text-eco-primary hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
+                <Link to="/calculator" className="w-full sm:w-auto">
+                  <Button size="lg" variant="secondary" className="w-full sm:w-auto bg-white text-eco-primary hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold">
                     Calcular Meu Impacto
                   </Button>
                 </Link>

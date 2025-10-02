@@ -78,13 +78,13 @@ const Impactos = () => {
     <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-orange-50">
       {/* Header/Navigation */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-green-200">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Leaf />
-              <span className="text-2xl font-bold text-gray-800">EcoTech</span>
+              <Leaf className="h-5 w-5 sm:h-6 sm:w-6" />
+              <span className="text-xl sm:text-2xl font-bold text-gray-800">EcoTech</span>
             </div>
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden lg:flex space-x-6 xl:space-x-8">
               <Link to="/" className="text-gray-600 hover:text-eco-primary transition-colors">Início</Link>
               <Link to="/impactos" className="text-eco-primary font-semibold">Impactos</Link>
               <Link to="/dados" className="text-gray-600 hover:text-eco-primary transition-colors">Dados</Link>
@@ -92,26 +92,26 @@ const Impactos = () => {
               <Link to="/calculator" className="text-gray-600 hover:text-eco-primary transition-colors">Calculadora</Link>
             </div>
             <Link to="/calculator">
-              <Button className="bg-eco-primary hover:bg-eco-secondary text-white">
-                Calcular Impacto
+              <Button className="bg-eco-primary hover:bg-eco-secondary text-white text-sm sm:text-base px-3 sm:px-4">
+                Calcular
               </Button>
             </Link>
           </div>
         </div>
       </nav>
 
-      <section className="py-20 px-6">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="container mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <Badge className="mb-4 bg-red-100 text-red-800 border-red-200">
+          <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+            <Badge className="mb-4 bg-red-100 text-red-800 border-red-200 text-sm sm:text-base">
               Dados Científicos Comprovados
             </Badge>
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
               O Impacto Real da Tecnologia
             </h1>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
             {impactData.map((item, index) => (
               <Card 
                 key={index} 
@@ -144,11 +144,11 @@ const Impactos = () => {
           </div>
 
           {/* Detailed Impact Analysis */}
-          <div className="mb-16">
-            <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <div className="mb-12 sm:mb-16">
+            <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-12 px-4">
               Outros Dados Importantes
             </h3>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {detailedImpacts.map((impact, index) => (
                 <Card 
                   key={index} 

@@ -135,13 +135,13 @@ const Calculator = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
       {/* Header/Navigation */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-green-200">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Leaf />
-              <span className="text-2xl font-bold text-gray-800">EcoTech</span>
+              <Leaf className="h-5 w-5 sm:h-6 sm:w-6" />
+              <span className="text-xl sm:text-2xl font-bold text-gray-800">EcoTech</span>
             </div>
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden lg:flex space-x-6 xl:space-x-8">
               <Link to="/" className="text-gray-600 hover:text-eco-primary transition-colors">Início</Link>
               <Link to="/impactos" className="text-gray-600 hover:text-eco-primary transition-colors">Impactos</Link>
               <Link to="/dados" className="text-gray-600 hover:text-eco-primary transition-colors">Dados</Link>
@@ -149,31 +149,31 @@ const Calculator = () => {
               <Link to="/calculator" className="text-eco-primary font-semibold">Calculadora</Link>
             </div>
             <Link to="/calculator">
-              <Button className="bg-eco-primary hover:bg-eco-secondary text-white">
-                Calcular Impacto
+              <Button className="bg-eco-primary hover:bg-eco-secondary text-white text-sm sm:text-base px-3 sm:px-4">
+                Calcular
               </Button>
             </Link>
           </div>
         </div>
       </nav>
 
-      <section className="py-20 px-6">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16 animate-fade-in">
-            <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
+          <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+            <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200 text-sm sm:text-base">
               Calculadora Científica
             </Badge>
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
               Calcule o Impacto
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-eco-primary to-green-600"> com Base Científica</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               Nossa calculadora utiliza metodologias validadas por estudos acadêmicos 
               para fornecer estimativas precisas do seu impacto ambiental.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
             {/* Input Form */}
             <Card className="p-6">
               <CardHeader>

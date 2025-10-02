@@ -170,13 +170,13 @@ const Dados = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-gray-50">
       {/* Header/Navigation */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-green-200">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Leaf />
-              <span className="text-2xl font-bold text-gray-800">EcoTech</span>
+              <Leaf className="h-5 w-5 sm:h-6 sm:w-6" />
+              <span className="text-xl sm:text-2xl font-bold text-gray-800">EcoTech</span>
             </div>
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden lg:flex space-x-6 xl:space-x-8">
               <Link to="/" className="text-gray-600 hover:text-eco-primary transition-colors">Início</Link>
               <Link to="/impactos" className="text-gray-600 hover:text-eco-primary transition-colors">Impactos</Link>
               <Link to="/dados" className="text-eco-primary font-semibold">Dados</Link>
@@ -184,25 +184,25 @@ const Dados = () => {
               <Link to="/calculator" className="text-gray-600 hover:text-eco-primary transition-colors">Calculadora</Link>
             </div>
             <Link to="/calculator">
-              <Button className="bg-eco-primary hover:bg-eco-secondary text-white">
-                Calcular Impacto
+              <Button className="bg-eco-primary hover:bg-eco-secondary text-white text-sm sm:text-base px-3 sm:px-4">
+                Calcular
               </Button>
             </Link>
           </div>
         </div>
       </nav>
 
-      <section className="py-20 px-6">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="container mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+          <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
               Dados Baseados em Pesquisa Acadêmica
             </h1>
           </div>
 
           {/* Stats Grid com fontes */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-20">
             {stats.map((stat, index) => (
               <Card 
                 key={index} 
@@ -229,11 +229,11 @@ const Dados = () => {
           </div>
 
           {/* Pesquisas Científicas */}
-          <div className="mb-16">
-            <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <div className="mb-12 sm:mb-16">
+            <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-12 px-4">
               Principais Descobertas Científicas
             </h3>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {researchFindings.map((research, index) => (
                 <Card 
                   key={index} 
@@ -274,12 +274,12 @@ const Dados = () => {
           </div>
 
           {/* Market Trends com fontes */}
-          <div className="mb-16">
-            <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <div className="mb-12 sm:mb-16">
+            <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-12 px-4">
               Tendências de Mercado - Dados Verificados
             </h3>
-            <div className="bg-gradient-to-r from-blue-50 to-green-50 p-8 rounded-2xl">
-              <div className="grid md:grid-cols-4 gap-6">
+            <div className="bg-gradient-to-r from-blue-50 to-green-50 p-6 sm:p-8 rounded-xl sm:rounded-2xl">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 {marketTrends.map((trend, index) => (
                   <div 
                     key={index} 
@@ -311,11 +311,11 @@ const Dados = () => {
           </div>
 
           {/* Casos Reais */}
-          <div className="mb-16">
-            <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <div className="mb-12 sm:mb-16">
+            <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-12 px-4">
               Casos de Sucesso Documentados
             </h3>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {realCaseStudies.map((study, index) => (
                 <Card 
                   key={index} 
@@ -369,17 +369,17 @@ const Dados = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center bg-gradient-to-r from-eco-primary to-green-600 text-white p-12 rounded-2xl shadow-xl">
-            <h3 className="text-3xl font-bold mb-4">
+          <div className="text-center bg-gradient-to-r from-eco-primary to-green-600 text-white p-6 sm:p-8 lg:p-12 rounded-xl sm:rounded-2xl shadow-xl mx-4">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
               Dados Científicos Comprovam: T.I. Verde Funciona
             </h3>
-            <p className="text-xl mb-8 opacity-90">
+            <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 opacity-90 px-4">
               Mais de 200 estudos acadêmicos confirmam que empresas podem reduzir 
               até 80% de suas emissões e economizar milhões implementando T.I. Verde
             </p>
             <div className="flex justify-center max-w-md mx-auto">
-              <Link to="/calculator">
-                <Button size="lg" variant="secondary" className="bg-white text-eco-primary hover:bg-gray-100">
+              <Link to="/calculator" className="w-full sm:w-auto">
+                <Button size="lg" variant="secondary" className="w-full sm:w-auto bg-white text-eco-primary hover:bg-gray-100">
                   Ver Cálculos Científicos
                 </Button>
               </Link>
