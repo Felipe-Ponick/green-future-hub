@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Leaf, TrendingUp, BarChart3, PieChart, Download, ExternalLink, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Footer from '@/components/Footer';
+import { MobileNav } from '@/components/MobileNav';
 
 const Dados = () => {
   // Dados baseados em pesquisas acadêmicas reais
@@ -170,11 +171,12 @@ const Dados = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-gray-50">
       {/* Header/Navigation */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-green-200">
-        <div className="container mx-auto px-4 sm:px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-3">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-2">
+              <MobileNav />
               <Leaf className="h-5 w-5 sm:h-6 sm:w-6" />
-              <span className="text-xl sm:text-2xl font-bold text-gray-800">EcoTech</span>
+              <span className="text-lg sm:text-xl font-bold text-gray-800">EcoTech</span>
             </div>
             <div className="hidden lg:flex space-x-6 xl:space-x-8">
               <Link to="/" className="text-gray-600 hover:text-eco-primary transition-colors">Início</Link>
@@ -184,7 +186,7 @@ const Dados = () => {
               <Link to="/calculator" className="text-gray-600 hover:text-eco-primary transition-colors">Calculadora</Link>
             </div>
             <Link to="/calculator">
-              <Button className="bg-eco-primary hover:bg-eco-secondary text-white text-sm sm:text-base px-3 sm:px-4">
+              <Button className="bg-eco-primary hover:bg-eco-secondary text-white text-xs sm:text-sm px-3 sm:px-4 py-2">
                 Calcular
               </Button>
             </Link>
